@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: sans-serif;
+    text-decoration: none; /*ancoras sem sublinhado*/
+}
+body {
+    display:flex;
+    width: 100%; /*ocupar 100% da minha tela*/
+    min-height:100vh; /*esta é a primeira altura, pode ficar maior se tiver muitos container*/
+    background-color: rgb(243, 243, 243);
+    padding:0;
+    margin: 0;
+    justify-content: center; /*eixo horizontal do container*/
+}
+.instagram {
+    display:flex; /* ele vira um flex container - aquele container que todos os itens que estiver dentro dele ficarao em linha ocupando o maior espaco daquela linha - sempre alinha em linha ***  Torna o elemento um flex container automaticamente transformando todos os seus filhos diretos em flex itens.*/
+    align-items: center; /*alinha os itens dentro do container na linha vertical*/
+    justify-content: start;/*alinha os itens dentro do container na linha horizontal, neste caso como sao 2 grandes container, com esta funcao ambos ficam um do lado do outro*/
+    width: 60%;
+    height:100vh; /*padrao*/
+}
+.phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+}
+.phone img {
+    height: 50rem;
+}
+.lateral {
+    display: flex;
+    align-items: center; /*quando é o column, deixa de ser vertical e fica horizontal*/
+    justify-content: space-around;  /*quando é o column, deixa de ser horizontal e fica vertical*/
+    flex-direction: column;
+    width: 50%;
+    min-height: 34rem;
+}
+.grupo {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding:1.3rem 0;
+    width: 100%;
+    border: 1px solid lightgray;
+    background-color:#ffffff;
+}
+.grupo:nth-child(1){ /*seleciona 1 item, 1 é o primeiro e o 2 é o segundo*/
+    min-height: 19rem;
+}
+.instagram_logo {
+    height: 3rem;
+}
+.foto_perfil_instagram {
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* esconde o redsto quadrado da foto quando transformamos ela em circulo */
+}
+.foto_perfil_instagram img {
+    height: 6rem;
+}
+.login {
+    background-color: #0095f6;
+    border-radius: 4px;
+    padding:8px ;
+    color: #ffffff;
+}
+.logout {
+    color: #0095f6;
+    margin-top: 1rem;
+}
+.not_account {
+    color: rgb(160, 160, 160);   
+}
+.link-blue {
+    color:#0095f6;
+}
+.get_the_app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding: 1.3rem 0;
+}
+.download {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+.app_download {
+    height: 3rem;
+    width: 10rem;
+    background-size: cover; /* sera imagem */
+}
+.app_download:nth-child(1) {
+    background-image: url(./img/apple-button.png);
+}
+.app_download:nth-child(2) {
+    background-image: url(./img/googleplay-button.png);
+}
+
+/*Responsividade: expecionar pag web - clicar no icone de tablet e celular e ir selecionando o menu superior a minha pagina para ver se ta quebrado */
+
+/*media queries*/
+
+/*tablet*/
+@media (max-width:1024px) {
+    .instagram {
+        width: 90%; /*o meu container principal ocupar 90% da minha tela*/ 
+    }
+}
+/*celular*/
+@media (max-width:650px){
+    body {
+        background-color: #ffffff;
+    }
+    .instagram {
+        width: 90%;  /*o m eu container principal ocupar 90% da minha tela*/ 
+    }
+    .phone {
+        display:none; /*foto do celular some e fica apenas o container lateral na tela do celular*/
+    }
+    .lateral {
+        width:100%; /*foto do celular some e fica apenas o container lateral na tela do celular*/
+    }
+    .grupo{
+        border: 1px solid transparent;
+    }
+}
